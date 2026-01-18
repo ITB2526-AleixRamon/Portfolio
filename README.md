@@ -33,3 +33,28 @@ The project is organized as follows:
 ├── html/                # Inner pages (Contact, Project Details)
 ├── img/                 # Images and screenshots
 └── js/                  # JavaScript logic files
+
+## 🔧 How to Run
+
+You can run this project locally by following these steps:
+
+### Option 1: Using Visual Studio Code (Recommended)
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/ITB2526-AleixRamon/Portfolio.git](https://github.com/ITB2526-AleixRamon/Portfolio.git)
+    ```
+2.  Open the folder in **VS Code**.
+3.  Install the **Live Server** extension (if not installed).
+4.  Right-click on `index.html` and select **"Open with Live Server"**.
+
+### Option 2: Basic Method
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/ITB2526-AleixRamon/Portfolio.git](https://github.com/ITB2526-AleixRamon/Portfolio.git)
+    ```
+2.  **Navigate to the folder:**
+    ```bash
+    cd Portfolio
+    ```
+3.  **Open the file:**
+    Simply double-click on `index.html` to open it in your default web browser.
