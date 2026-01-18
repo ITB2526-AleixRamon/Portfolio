@@ -33,6 +33,7 @@ The project is organized as follows:
 ├── html/                # Inner pages (Contact, Project Details)
 ├── img/                 # Images and screenshots
 └── js/                  # JavaScript logic files
+```
 
 ## 🔧 How to Run
 
