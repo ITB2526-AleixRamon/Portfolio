@@ -1,0 +1,257 @@
+/* ==================================== */
+/* 1. BASES I FONS                      */
+/* ==================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    h1, h2, h3, h4, h5, h6 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;}
+    
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333333;
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed; 
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('../img/background.jpg');
+    background-size: cover; 
+    background-position: center; 
+    opacity: 0.3; 
+    z-index: -1; 
+}
+
+/*2. HEADER (Amb Menú Desplegable)*/
+
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    border-bottom: 3px solid #1e88e5;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Important per al posicionament del menú */
+}
+
+header img { 
+    height: 50px;       
+    width: auto;        
+    object-fit: contain; 
+    z-index: 10; 
+}
+
+header h1 {
+    position: absolute;
+    left: 0; right: 0;
+    text-align: center;
+    pointer-events: none;
+}
+
+header h1 a {
+    pointer-events: auto;
+    text-decoration: none;
+    color: #0d47a1;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Llista principal */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    z-index: 20;
+}
+
+nav ul a {
+    color: #0d47a1;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: 0.3s;
+    display: block;
+}
+
+nav ul a:hover {
+    background-color: #0d47a1;
+    color: #ffffff;
+}
+
+/* Lògica del Dropdown */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;            /* Amagat per defecte */
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 100;
+    border-radius: 4px;
+    top: 100%;                /* Apareix just a sota */
+    left: 0;
+    padding: 0;
+    flex-direction: column;   /* Els projectes un sota l'altre */
+    gap: 0;
+}
+
+/* Estil dels enllaços dins del desplegable */
+.dropdown-content li {
+    width: 100%;
+}
+
+.dropdown-content a {
+    color: #0d47a1;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    border-radius: 0;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #0d47a1;
+}
+
+/* Mostrar al passar el ratolí */
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+/*3. LLISTAT DE PROJECTES*/
+
+main {
+    padding: 60px 20px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centrat horitzontal */
+    align-items: flex-start; /* Alineat a dalt */
+}
+
+#llistat-complet {
+    width: 100%;
+    max-width: 800px;
+}
+
+#llistat-complet h2 {
+    margin-bottom: 40px;
+    text-align: center;
+    color: #0d47a1;
+    font-size: 2em;
+    border-bottom: 2px solid #1e88e5;
+    padding-bottom: 10px;    
+}
+
+.projecte-llista {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-left: 8px solid #1e88e5;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+/* Efecte en passar el ratolí */
+
+.projecte-llista:hover {
+    transform: scale(1.02); /* Creix una mica */
+    border-left-color: #0d47a1;
+    background-color: #ffffff;
+}
+
+.projecte-llista h3 {
+    color: #0d47a1;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.projecte-llista p {
+    margin-bottom: 20px;
+    color: #555555;
+}
+
+article.projecte {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.img-tutorial {
+    max-width: 200px; /* Ajusta este tamaño si la imagen es muy grande */
+    height: auto;
+    flex-shrink: 0; /* Evita que la imagen se mueva o cambie de tamaño */
+}
+
+/* Botó de la llista */
+
+.btn-llista {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #1e88e5;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-llista:hover {
+    background-color: #0d47a1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. FOOTER */
+
+footer {
+    background-color: #0d47a1;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer .xarxes {
+    margin-top: 10px;
+}
+
+footer .xarxes a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9em;
+}
+
+footer .xarxes a:hover {
+    text-decoration: underline;
+}
+
+/*FUNCIONALITAT JAVASCRIPT: Efecte Typewriter*/
+
+#typing-text::after {
+    content: "|";
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
